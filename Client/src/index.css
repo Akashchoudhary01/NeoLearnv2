@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: caramellatte --default, synthwave;
+}
+
+
+body{
+  margin: 0;
+  max-width: 1440px;
+  position: relative;
+}
