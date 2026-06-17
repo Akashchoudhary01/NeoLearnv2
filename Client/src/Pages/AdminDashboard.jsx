@@ -20,6 +20,7 @@ import { FaUsers } from "react-icons/fa";
 import { FcSalesPerformance } from "react-icons/fc";
 import { GiMoneyStack } from "react-icons/gi";
 import { BsCollectionPlay, BsTrash } from "react-icons/bs";
+import toast from "react-hot-toast";
 
 // Register Chart.js components
 ChartJS.register(
@@ -74,6 +75,8 @@ const AdminDashboard = () => {
       },
     ],
   };
+
+  const role = useSelector((state)=> state?.auth?.data);
 
   async function onCourseDelete(id) {
     if (window.confirm("Are you sure you want to delete this course?")) {
@@ -215,7 +218,14 @@ const AdminDashboard = () => {
                           <button
                             className="bg-red-500 hover:bg-red-600 p-2 rounded-md transition-colors"
                             title="Delete Course"
-                            onClick={() => onCourseDelete(course?._id)}
+
+                            onClick={() =>{
+
+                              if(role !=="SUPER_ADMIN"){
+                                toast.error("Only Super Admin can delete the course ")
+                              }
+                              onCourseDelete(course?._id)}
+                            }
                           >
                             <BsTrash className="text-xl" />
                           </button>
