@@ -51,7 +51,8 @@ const authorizedSubscriber = async (
     }
 
     if (
-      user.role !== "ADMIN" &&
+      user.role !== "ADMIN"   &&
+      user.role !== "SUPER_ADMIN"   &&
       user.subscription?.status !== "active"
     ) {
       return next(
