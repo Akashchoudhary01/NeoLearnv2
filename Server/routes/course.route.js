@@ -44,7 +44,7 @@ router.delete(
   deleteLectureById,
 );
 
-router.delete("/:id", isLoggedIn, authorizedRoles("ADMIN"), deleteCourse);
+router.delete("/:id", isLoggedIn, authorizedRoles("SUPER_ADMIN"), deleteCourse);
 
 router.put(
   "/:id",
