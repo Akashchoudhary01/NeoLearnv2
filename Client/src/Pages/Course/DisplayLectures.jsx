@@ -81,7 +81,7 @@ export default function DisplayLectures() {
             Lecture List
           </h2>
 
-          {role === "ADMIN" && (
+          {role === "ADMIN" || role === "SUPER_ADMIN" (
             <button
               onClick={() =>
                 navigate("/courses/lecture/add", {
@@ -128,7 +128,7 @@ export default function DisplayLectures() {
                 </div>
               </div>
 
-              {role === "ADMIN" && (
+              {role === "ADMIN" || role === "SUPER_ADMIN" && (
                 <button
                   onClick={() =>
                     handelLectureDeletion(
@@ -152,13 +152,13 @@ export default function DisplayLectures() {
         No Lectures Available
       </h1>
 
-{role === "ADMIN" && (
+{role === "ADMIN" || role === "SUPER_ADMIN" && (
       <p className="text-gray-500 mt-3 text-sm sm:text-base">
         Start by adding your first lecture.
       </p>
 )}
 
-      {role === "ADMIN" && (
+      {role === "ADMIN" || role === "SUPER_ADMIN" && (
         <button
           onClick={() =>
             navigate("/courses/lecture/add", {

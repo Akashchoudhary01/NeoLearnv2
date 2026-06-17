@@ -52,7 +52,7 @@ const CourseDescription = () => {
               </div>
 
               {/* Action Button */}
-              {role === "ADMIN" || data?.subscription?.status === "active" ? (
+              {role === "ADMIN" || role === "SUPER_ADMIN" || data?.subscription?.status === "active" ? (
                 <button
                   className="btn btn-success w-full text-lg"
                   onClick={() =>

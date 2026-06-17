@@ -97,7 +97,7 @@ const Profile = () => {
               <div className="bg-gray-800 rounded-xl p-4">
                 <p className="text-gray-400 text-sm">Account Type</p>
                 <p className="text-white mt-1">
-                  {userData?.role === "ADMIN"
+                  {userData?.role === "ADMIN" || userData?.role ==="SUPER_ADMIN"
                     ? "Administrator"
                     : "Student"}
                 </p>
