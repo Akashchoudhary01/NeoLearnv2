@@ -31,7 +31,7 @@ const Profile = () => {
         <div className="w-full max-w-4xl bg-gray-900 rounded-3xl shadow-[0_0_30px_rgba(59,130,246,0.25)] overflow-hidden">
 
           {/* Header */}
-          <div className="h-36 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+          <div className="h-36 bg-linear-to-r from-blue-600 to-indigo-600"></div>
 
           {/* Profile Content */}
           <div className="px-6 sm:px-10 pb-10 relative">
@@ -125,7 +125,7 @@ const Profile = () => {
             </div>
 
             {/* Cancel Subscription */}
-            {userData?.subscription?.status === "active" && userData?.role !=="ADMIN" && (
+            {userData?.subscription?.status === "active" && userData?.role !=="ADMIN" || userData?.role !=="SUPER_ADMIN"  && (
               <button
                 onClick={HandleCourseUnsubscribe}
                 className="w-full mt-6 bg-red-500 hover:bg-red-600 py-3 rounded-xl font-semibold transition-all duration-300 active:scale-95 text-white"

@@ -22,6 +22,7 @@ import { GiMoneyStack } from "react-icons/gi";
 import { BsCollectionPlay, BsTrash } from "react-icons/bs";
 import toast from "react-hot-toast";
 
+
 // Register Chart.js components
 ChartJS.register(
   ArcElement,
@@ -36,6 +37,7 @@ ChartJS.register(
 const AdminDashboard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const role = useSelector((state)=> state?.auth?.data?.role);
 
   // Extracting data from Redux Store
   const { allUsersCount, SubscribedCount } = useSelector((state) => state.stat);
@@ -76,7 +78,8 @@ const AdminDashboard = () => {
     ],
   };
 
-  const role = useSelector((state)=> state?.auth?.data);
+
+  
 
   async function onCourseDelete(id) {
     if (window.confirm("Are you sure you want to delete this course?")) {
@@ -87,6 +90,7 @@ const AdminDashboard = () => {
     }
   }
  useEffect(() => {
+ 
   console.log("Users Stats:", {
     allUsersCount,
     SubscribedCount,
@@ -110,6 +114,7 @@ const AdminDashboard = () => {
         <h1 className="text-4xl font-bold text-blue-500 text-center tracking-wide">
           Admin Dashboard
         </h1>
+        
 
         {/* Top Row: Stat Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

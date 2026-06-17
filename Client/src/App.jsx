@@ -43,13 +43,13 @@ function App() {
       <Route path="/reset-password/:token"
       element={<ResetPasswordRedirect/>}/>
 
-      <Route element={<RequiredAuth allowedRoles={["ADMIN"]} /> }>
+      <Route element={<RequiredAuth allowedRoles={["ADMIN" , "SUPER_ADMIN"]} /> }>
       <Route path='/course/create' element={<CreateCourse/>}/>
       <Route path='/courses/lecture/add' element={<CreateLecture/>}/>
       <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
       </Route>
 
-      <Route element={<RequiredAuth allowedRoles={["ADMIN" , "USER"]} /> }>
+      <Route element={<RequiredAuth allowedRoles={["ADMIN" , "USER" , "SUPER_ADMIN"]} /> }>
       <Route path='/user/profile' element={<Profile/>}/>
       <Route path='/user/editProfile' element={<EditProfile/>}/>
       <Route path='/checkout' element={<Checkout/>}/>

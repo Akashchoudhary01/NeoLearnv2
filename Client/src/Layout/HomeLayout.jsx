@@ -51,7 +51,7 @@ const HomeLayout = ({ children }) => {
             </li>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/courses">All Courses</Link></li>
-            {isLoggedIn && role === "ADMIN" && (
+            {isLoggedIn && role === "ADMIN" || role === "SUPER_ADMIN"  && (
               <>
                 <li><Link to="/admin/dashboard">Admin Dashboard</Link></li>
                 <li><Link to="/course/create">Create Course</Link></li>

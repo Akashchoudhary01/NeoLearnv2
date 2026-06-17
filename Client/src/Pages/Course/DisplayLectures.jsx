@@ -81,7 +81,7 @@ export default function DisplayLectures() {
             Lecture List
           </h2>
 
-          {role === "ADMIN" || role === "SUPER_ADMIN" (
+          {role === "ADMIN" || role === "SUPER_ADMIN" &&(
             <button
               onClick={() =>
                 navigate("/courses/lecture/add", {
