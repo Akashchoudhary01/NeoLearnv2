@@ -8,6 +8,6 @@ router.route('/contact-us').post(contactUs);
 
 router
   .route('/admin/stats/users')
-  .get(isLoggedIn, authorizedRoles("ADMIN") , userStats);
+  .get(isLoggedIn, authorizedRoles("ADMIN" , "SUPER_ADMIN") , userStats);
 
 export default router;

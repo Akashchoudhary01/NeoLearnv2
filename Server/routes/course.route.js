@@ -25,14 +25,14 @@ router.post(
   "/",
   isLoggedIn,
   uploads.single("thumbnail"),
-  authorizedRoles("ADMIN"),
+  authorizedRoles("ADMIN" ,  "SUPER_ADMIN"),
   createCourse,
 );
 
 router.post(
   "/:id",
   isLoggedIn,
-  authorizedRoles("ADMIN"),
+  authorizedRoles("ADMIN" ,  "SUPER_ADMIN"),
   uploads.single("lecture"),
   AddLectureToCourseById,
 );
@@ -40,7 +40,7 @@ router.post(
 router.delete(
   "/:courseId/lecture/:lectureId",
   isLoggedIn,
-  authorizedRoles("ADMIN"),
+  authorizedRoles("ADMIN" , "SUPER_ADMIN"),
   deleteLectureById,
 );
 
@@ -50,7 +50,7 @@ router.put(
   "/:id",
   isLoggedIn,
   uploads.single("thumbnail"),
-  authorizedRoles("ADMIN"),
+  authorizedRoles("ADMIN" ,  "SUPER_ADMIN"),
   updateCourse,
 );
 

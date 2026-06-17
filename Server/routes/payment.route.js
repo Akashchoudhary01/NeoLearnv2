@@ -18,6 +18,6 @@ router.post("/verify" , isLoggedIn, verifySubscription);
 
 router.post( "/unSubscribe" , isLoggedIn, cancelSubscription);
 
-router.get( "/" , isLoggedIn, authorizedRoles("ADMIN"), allPayments);
+router.get( "/" , isLoggedIn, authorizedRoles("ADMIN" , "SUPER_ADMIN"), allPayments);
 
 export default router;
