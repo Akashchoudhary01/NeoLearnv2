@@ -34,6 +34,11 @@
 
 ---
 
+* **ROLE**
+  *SUPER_ADMIN*
+  *ADMIN*
+  *USER*
+
 ## 📂 Project Structure
 
 ### Client (Frontend)
